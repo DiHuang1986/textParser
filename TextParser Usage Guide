@@ -1,50 +1,50 @@
 ParseLog.groovy Usage Guide
 A. Install Groovy
-	1. Go to http://groovy.codehaus.org/Download, download a groovy. Most recent version is 2.2.1
-	2. Download Windows-Installer Binary Release 
-	3. Install it.
-	4. Open cmd.exe, type "groovy -v" to verify the installation.
-	
+  1. Go to http://groovy.codehaus.org/Download, download a groovy. Most recent version is 2.2.1
+  2. Download Windows-Installer Binary Release 
+  3. Install it.
+  4. Open cmd.exe, type "groovy -v" to verify the installation.
+  
 B. Use ParseLog.groovy
-	1. open ParseLog folder. 
-	2. Double click parselog.cmd
-	3. Input log name
-	4. Press enter, 
-	5. parsed result will be in the log file folder
-	
-	*BE AWARE:
-		# if error happened during parsing log file, it will wait 5 seconds and try again
-		
+  1. open ParseLog folder. 
+  2. Double click parselog.cmd
+  3. Input log name
+  4. Press enter, 
+  5. parsed result will be in the log file folder
+  
+  *BE AWARE:
+    # if error happened during parsing log file, it will wait 5 seconds and try again
+    
 C. View parsed files
-	1. There will be new folder named as the file name in the root folder. eg: a wrapper folder will be created if we parse wrapper.log
-	2. There are multi files exist in the new folder. Several .csv file and several .log file
-	3. In root folder, create a new excel file, named it as what ever you like. eg: viewLog.xlsx
-	4. Choose 
-		Data/
-			From Text/
-				%Choose a csv file in the new folder%/
-					next/
-						check Comma/
-							uncheck Tab/
-								next/
-									finish/
-										OK
-	5. Choose 
-		Data/
-			Properties/
-				uncheck Prompt for file name on refresh/
-					check Refresh every %you desired% minutes(eg: 3 min)/
-						OK
-	6. Every time you want to refresh data, click
-		Data/
-			RefreshAll
-	7. You can create one connection in one sheet. And do remember to do step 5 for each connection.
-	
-	*BE AWARE
-		# the message in the csv file is modified for presentation, you should NOT use it in documents.
-		# if the wrapper.log is big, it will take more time to parse. 
-			- a 5Mb log will takes about 15 seconds to parse.
-		
+  1. There will be new folder named as the file name in the root folder. eg: a wrapper folder will be created if we parse wrapper.log
+  2. There are multi files exist in the new folder. Several .csv file and several .log file
+  3. In root folder, create a new excel file, named it as what ever you like. eg: viewLog.xlsx
+  4. Choose 
+    Data/
+      From Text/
+        %Choose a csv file in the new folder%/
+          next/
+            check Comma/
+              uncheck Tab/
+                next/
+                  finish/
+                    OK
+  5. Choose 
+    Data/
+      Properties/
+        uncheck Prompt for file name on refresh/
+          check Refresh every %you desired% minutes(eg: 3 min)/
+            OK
+  6. Every time you want to refresh data, click
+    Data/
+      RefreshAll
+  7. You can create one connection in one sheet. And do remember to do step 5 for each connection.
+  
+  *BE AWARE
+    # the message in the csv file is modified for presentation, you should NOT use it in documents.
+    # if the wrapper.log is big, it will take more time to parse. 
+      - a 5Mb log will takes about 15 seconds to parse.
+    
 BY THE WAY: 
-	if you have any question, please contact Di Huang, di.huang@careeverywhere.com
-	
+  if you have any question, please contact Di Huang, di.huang@careeverywhere.com
+  

@@ -6,8 +6,8 @@ Refiner is a closure, which takes a String as parameter, and return a modified S
 For example: we need a refiner which can replace all bar "|" to comma "," 
 // str is input parameter
 { str ->
-	def polishedStr = str.replaceAll(/\|/, ",")
-	return polishedStr
+  def polishedStr = str.replaceAll(/\|/, ",")
+  return polishedStr
 }
 
 Pre-B. Filter
@@ -15,28 +15,28 @@ Filter is a closure, which takes a String as parameter, and return a boolean bas
 For example: we need a filter which can check whether the str contains "abc"
 // str is input parameter
 { str ->
-	boolean contains = ( str =~ /abc/ )
-	return contains
+  boolean contains = ( str =~ /abc/ )
+  return contains
 }
 
 A. The whole config contains two parts: CONTENT part and TASKS part. 
-	CONTENT: is used to refine the whole content of the logs. eg. The wrapper.log contains a prefix
-	"INFO   | jvm1     | Dec 21 2014 | ", these infomation have no meaning to actual usage. and it prevent
-	us to fetch usable information. So we have to remove all these information. We add a refiner replacePrefix
-	to the CONTENT refiner list. Before actual tasks, the Content refiners will be used first to handle the
-	text of the log.
-	
-	TASKS: is the actual part which config the action the parser. It contains a list of tasks. 
-		Task: is a parser task, it can contains multiple targets, and one extract pattern, a list of refiners, and 
-		name, and description. 
-			pattern: the str you want to extract, for example: /<XML>[\d\D]*?<\/XML>/ will extract all XML message
-			refiners: before doing targets, refiners will used to polish the elements extracted by pattern
-			targets: a list of targets
-				Target: it contains a name, a file name, a list refiners, a list of filters. When a message in, it will
-				be filtered first, then refined, and then write to file
+  CONTENT: is used to refine the whole content of the logs. eg. The wrapper.log contains a prefix
+  "INFO   | jvm1     | Dec 21 2014 | ", these infomation have no meaning to actual usage. and it prevent
+  us to fetch usable information. So we have to remove all these information. We add a refiner replacePrefix
+  to the CONTENT refiner list. Before actual tasks, the Content refiners will be used first to handle the
+  text of the log.
+  
+  TASKS: is the actual part which config the action the parser. It contains a list of tasks. 
+    Task: is a parser task, it can contains multiple targets, and one extract pattern, a list of refiners, and 
+    name, and description. 
+      pattern: the str you want to extract, for example: /<XML>[\d\D]*?<\/XML>/ will extract all XML message
+      refiners: before doing targets, refiners will used to polish the elements extracted by pattern
+      targets: a list of targets
+        Target: it contains a name, a file name, a list refiners, a list of filters. When a message in, it will
+        be filtered first, then refined, and then write to file
 
 ENJOY IT.
 
 BY THE WAY: 
-	if you have any question, please contact Di Huang, di.huang@careeverywhere.com
-	
+  if you have any question, please contact Di Huang, di.huang@careeverywhere.com
+  
